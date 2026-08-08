@@ -1,0 +1,24 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+                
+        i = 0
+        j = len(nums) - 1
+        mid = (i + j)//2
+
+
+        while i <= j:
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] > target:
+                j = mid - 1
+                mid = (i+j)//2
+            elif nums[mid] < target:
+                i = mid + 1
+                mid = (i+j)//2
+            
+        return -1
+            
+                
+
+
+        
